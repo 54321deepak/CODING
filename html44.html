@@ -1,0 +1,79 @@
+<!-- 45 media in grid dek lena -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>grid templete 11</title>
+    <style>
+        .container {
+            display: grid;
+            grid-gap: 1rem;
+            grid-template-areas:   
+            'a a a a'  
+            'b b b c'
+            'footer footer footer footer';
+        }
+
+        .boc {
+            background-color: yellow;
+            border: 3px solid red;
+
+        }
+
+        #a{
+            grid-area:a;
+        }
+
+        #b{
+            grid-area:b;
+        }
+
+        #c {
+            grid-area: c;
+        }
+
+        footer{
+            grid-area: footer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div id="a" class="boc">
+
+            home aboutus contactus
+        </div>
+        <div id="b" class="boc">1Lorem ipsum dolor sit, a quentoredolorum sint?
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem harum, natus pariatur nobis ipsum iste vel illum dolores vero rem atque explicabo expedita totam placeat recusandae numquam obcaecati temporibus libero.
+
+        </div>
+        <div id="c" class="boc">Lorel
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, sequi atque! Fuga sunt, eum cumque doloribus facere, est quos impedit unde eos tempore dignissimos. Temporibus eligendi ipsam minima illo esse.
+            om ipsum doletur adipinis.</div>
+        
+
+        <!-- <div class="boc">item-1</div>
+        <div class="boc">item-2</div>
+        <div class="boc">item-3</div>
+        <div class="boc">item-4</div>
+        <div class="boc">item-5</div>
+        <div class="boc">item-6</div>
+        <div class="boc">item-7</div>
+        <div class="boc">item-8</div>
+        <div class="boc">item-9</div>
+        <div class="boc">item-10</div>
+        <div class="boc">item-11</div>
+        <div class="boc">item-12</div>
+        <div class="boc">item-13</div>
+         <div class="boc">item-14</div> -->
+         <footer class="boc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolor veritatis porro nobis dolorem corrupti iste reprehenderit atque veniam esse, voluptas animi qui fugit temporibus dicta dolores laudantium ab repellendus.</footer>
+    </div> 
+
+</body>
+
+</html>

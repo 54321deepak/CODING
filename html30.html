@@ -1,0 +1,100 @@
+<!--  30- @media  query =way of making reponsive website, it allowed you to add different css at different condition =thapa technical good video-->
+
+<!-- 31- more selector =  1= div li p{} =it effect all p which inside div li and there are many element in between div li p but they are not effected -->
+<!-- div div ul li a p -->
+<!-- 2=div >p{} = affect p element which directory inside div , no element in between-->
+<!-- 3=div +p{} = affect p whose upper subling is div -->
+
+<!-- 32-  attributes & nth-child pseudo selectors -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Do</title>
+    <style>
+        /* normal selector */
+        .container {
+            border: 2px solid red;
+            width: 500px;
+            margin: auto;
+        }
+
+        input {
+            display: block;
+        }
+
+        input[type='text'] {
+            padding: 23px;
+            border: 2px solid red;
+        }
+
+        input[type='email']{
+       background-color: orange;
+        }
+
+        a[target] {
+            text-decoration: none;
+            background-color: pink;
+        }
+
+        a[target='_self'] {
+            color: black;
+        }
+        
+
+
+        /* li:nth-child(3){ 
+            background-color: chartreuse;
+        }
+
+li:nth-child(2n+2){
+    background-color: black;
+ 
+/} */
+
+/* odd child*/
+li:nth-child(odd){
+background-color: blue;
+
+} 
+
+li:nth-child(even){
+background-color: blueviolet;
+
+}
+
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1><a href="http.google.com" target="_self">go to google</a></h1>      /*see clearly*/
+        <h1><a href="http.facebook.com">go to google</a></h1>
+        <h1><a href="http.google.com" target="_blank">go to google</a></h1>      /*see clearly*/
+        <form action="" class="form-control">
+        <input type="text" placeholder="enter your name">
+        <input type="password" placeholder="enter your password">
+        <input type="email"  placeholder="enter your email">
+        <input type="submit" value="submit">
+        </form>
+        <ul>
+            <li class="item" id="item1">item1</li>
+            <li class="item" id="item2">item2</li>
+            <li class="item" id="item3">item3</li>
+            <li class="item" id="item4">item4</li>
+            <li class="item" id="item5">item5</li>
+            <li class="item" id="item6">item3</li>
+            <li class="item" id="item7">item4</li>
+            <li class="item" id="item8">item5</li>
+
+       
+        </ul>
+    </div>
+</body>
+
+</html>

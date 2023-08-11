@@ -1,0 +1,5 @@
+@mixin p($part1,$part2){
+    color: red;
+    background-color: $part1;
+    font-size: $part2;
+    }

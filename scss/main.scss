@@ -1,0 +1,191 @@
+//technical thapa
+//6 partial
+@import "mixin";
+
+
+// sass and scss ,in sass it is not necesssary to add  asemicolon(;)or bracket, but in scss it is necessar
+
+//1 operator
+
+h1{
+     font-size: 20px+10px;
+} 
+//2 variables
+//local or gobal variable bana sakte hai
+$dddd:red;
+h1{
+     color:$dddd;
+}
+
+//3nesting
+
+// .heading{
+// display: flex;
+// flex-direction: column;
+// justify-content: center;
+// align-items: center;    
+
+// p{
+//     margin: 10px;
+//     color: orangered;
+//     font-size: large;
+
+//     &:hover{
+//         background-color: green;
+//     };
+
+//     &::after{
+//         content: " totol";
+//     }
+// }
+// }
+
+//4=mixin =set of block use again and again then use maxin
+
+// @mixin f{
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     align-items: center;        
+// }
+
+// .heading{
+//     @include f;
+    
+//     p{
+//         margin: 10px;
+//         color: orangered;
+//         font-size: large;
+    
+//         &:hover{
+//             background-color: green;
+//         };
+    
+//         &::after{
+//             content: " totol";
+//         }
+//     }
+//     }
+    
+//5 parameters
+
+@mixin f($tt,$rr){
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;        
+         color:$tt;
+         font-size:$rr;
+     }
+.heading{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;    
+    
+    p{
+        @include p(blue,200px);
+        margin: 10px;
+        
+        &:hover{
+            @include p(pink,20px);
+        };
+        
+        &::after{
+            content: " totol";
+            
+        }
+    }
+}
+
+//6 partial = making different files and import and use
+
+//yahoo baba
+
+
+    //interpolation #{} =we can't use concatenate(+) in class name or margan-left(Like)
+    $total:final;
+    $left:left;
+    
+    // .totol- + $total{
+        // margin- + $left:20px;
+        // } //not working
+
+.total-#{$total}{
+    margin-#{$left}:20px;
+    color: red;
+}
+
+
+//function always return
+@function r($size){
+    @return ($size/2);
+}
+
+.mine{
+    font-size: r(20) + px ;
+};
+
+//many inbuild function
+
+//selector normal
+.footer  .footer_one{
+    color: blue;
+    background-color: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+//list and map not  like javascript
+
+//if
+.footer .footer_two{
+    $test:1;
+    @if $test==1{
+        font-size:100px;
+    }
+    @else if $test==20px{
+        font-size:2px;
+    }
+    @else {
+        font-size:300px;
+    }}
+    
+    //for,for each,while
+    
+    //content is used to send property in mixin
+    @mixin ppp{
+        display: flex;
+        justify-content: center;
+    @content;
+}
+
+.section{
+    @include ppp{
+        align-items: center;
+    }
+    color: aqua;
+display: flex;
+flex-direction: column;}
+    
+    //media and at root
+    //video 6 extend= we can use class and id gian with adjustment
+
+    .oneone{
+        background-color: pink;
+        border: 2px solid red;  
+        padding: 20px;
+        margin: 20px;
+    }
+    .twotwo{
+        background-color: aqua;
+          @extend .oneone
+    }
+ 
+    .threethree{
+        background-color: blue;
+          @extend .oneone
+    }
+
+    //media query as a nested is a good way 

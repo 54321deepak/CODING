@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>diplay property</title>
+    <style>
+/*display properties*/        
+/*1=inline=1=>not define height and width 
+2=>height and width adjust according to content
+3=> does not start on a new line
+
+2=block=1=>define height and width
+2=> block element always start on anew line
+3=> by default it cover full line space
+4=> it does not allow anyone to come after this in same space
+
+3=inline-block=>does not start on a new line
+4=define height and width 
+*/
+    * {
+            box-sizing: border-box;
+        }
+
+        img {
+            margin: auto;                  /*margin auto work with block if add width*/
+            width: 100px;
+            display: block;
+        }
+
+        h3{
+            
+            /* margin: 0px; */
+            text-align: center;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        
+        .come {
+            width: 70%;
+            margin: auto;
+            border: 3px solid red;
+        }
+
+        .item{
+            margin-left: 20px;
+            margin-top:  10px;
+            border: 2px solid blue;
+               }
+
+        #i{
+            
+            float: left;
+        width: 31%;
+        margin-right: 2px;
+        }
+
+    
+        #l{
+            
+            float: left;
+            width: 31%;
+        margin-right: 2px;
+        
+        }
+
+        #o{
+            float: left;
+            width: 31%;
+        margin-right: 2px;
+        }
+
+        span {              /*margin auto does not work with inline*/ 
+            margin: auto;
+            width: 30px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="come">
+        <img src="./image/marc-kleen-UYvHnbfabfU-unsplash.jpg" alt="">
+        <h3>it is image of city</h3>
+    </div>
+
+    <div class="item"  id="i">
+        <h1>heading</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus error cupiditate quas corrupti eos eligendi
+            reiciendis porro esse! Iusto non cupiditate ducimus et necessitatibus dignissimos incidunt obcaecati sint
+            enim! Hic.</p>
+    </div>
+
+    <div class="item" id="l">
+        <h1>heading</h1>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam incidunt ea quam. Provident nam saepe
+            adipisci consequatur? Maiores accusamus, tempora sunt repellat reprehenderit fuga quo numquam consequatur.
+            Mollitia, reprehenderit illo.</p>
+    </div>
+
+    <div class="item" id="o">
+        <h1>heading</h1>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam incidunt ea quam. Provident nam saepe
+            adipisci consequatur? Maiores accusamus, tempora sunt repellat reprehenderit fuga quo numquam consequatur.
+            Mollitia, reprehenderit illo.</p>
+    </div>
+
+<span>ooooo</span>
+
+</body>
+
+</html>

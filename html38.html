@@ -1,0 +1,54 @@
+<!-- rotate ,transform ,move, scale some thing -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css transform</title>
+
+    <style>*{
+        margin: 0px;
+        padding: 0px;
+    }
+
+        .container{background-color: orange ;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 500px;
+        }
+        .box{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            border: 2px solid red;
+border-radius: 5px;
+            width: 200px;
+            height: 200px;
+            background-color: brown;
+            /* transform: rotate(45deg); */
+            transition: all 1s ease-in ;
+        }
+
+        .box:hover{
+ /* transform: rotate(45deg);  */
+ /* transform:  skew(40deg);  */
+ /* transform: scale(3);  */
+/* transform: translatex(34px); */
+/* transform: translatey(34px); */
+transform: translate(34px ,34px);        
+}
+
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            it is   box 
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>revaerse of array or string</title>
+</head>
+
+<body>
+
+    <script>
+        // array
+        let a= ["d", "e", "e", "p", "a", "k", "a", "b"];
+        let n = a.length;
+        let l = n - 1;
+            for (let i = 0; i < n / 2; i++) {
+                let k = a[i];
+                a[i] = a[l];
+                a[l] = k;
+                l--;
+            }
+             console.log(a)
+
+</script>
+</body>
+
+</html>

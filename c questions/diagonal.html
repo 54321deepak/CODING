@@ -1,0 +1,32 @@
+<!-- technomatz company question -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let array = [[1,2,3],[4,5,6],[7,8,10]];
+        let y=0;
+            let z=0;
+        for(let i=1;i<=2;i++){
+            let p =2
+            if(i == 1){
+              for(let j=0;j<=2;j++){
+                y = y + array[j][j]
+              }
+            }else{
+               for(let k=0;k<=2;k++){
+               z = z + array[k][p]
+                p--;
+              }
+            }
+        }
+        console.log(y-z)
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

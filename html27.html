@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title> visibility andz-index ,dispaly=none</title>
+<style>
+.box{
+    width: 200px;
+    height: 200px;
+}
+
+#box-1{
+    background-color: red;
+    position: relative;
+top: 48px;
+/* z-index: 1; */
+z-index: 3;
+}
+
+#box-2{
+    border: 2px solid green;
+position: relative;
+z-index: 2;
+}
+
+#box-3{
+    border: 2px solid orange;
+}
+
+#box-4{
+    border: 2px solid blue;
+        /* visibility: hidden; */
+    /* display: none; */
+
+}
+
+#box-5{
+    border: 2px solid blue;
+}
+
+</style>
+</head>
+
+<body>
+    <div class="box" id="box-1">111</div>
+    <div class="box" id="box-2">2222</div>
+    <div class="box" id="box-3">3333</div>
+    <div class="box" id="box-4">4444</div>
+    <div class="box" id="box-5">5555</div>
+</body>
+</html>

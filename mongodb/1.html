@@ -1,0 +1,52 @@
+//1 mongodb is database
+
+//2 install mongodb  
+//only start mongodb shell every time 
+//11 show dbs = it show all available databases
+
+//3  22 use thapatechnical = create and use database
+not show data  till we not add come collection
+//33db.thapadata.insertOne({name:"reactjs",type:"front end",video:0,active:"true"})
+db=current use datbase
+thapadata=collection we make
+insertOne=we add document in database 
+//44db=it give you current active data base
+//55show collections= it give you collection inside current using database
+//66 db.thapadata.find() =it give you document inside collection(thapadata)which is inside current using db
+//77 db.thapadata.find().pretty() =show contant in good way
+//88 ctrl+c to back
+{
+//show dbs
+//db
+//use thapatechnical
+//show collection
+//db.thapadata.insertOne({name:"reactjs",type:"front end",video:0,active:"true"})
+//db.thapadata.find()
+//db.thapadata.find().pretty()
+}
+
+//4 CRUD=create,read ,upstae ,delete 
+//create
+//99 db.thapadata.insertMany([{name:"reactjs",type:"front end",video:0,active:"true"},{name:"nodejs",type:"back end",video:50,active:"true"}])  = to insert Many document
+
+//5 read db.thapadata.find({query},{select})
+
+//  db.thapadata.find({name:"nodejs"}).pretty() =return documents which have name:"nodejs"
+//  db.thapadata.find({name:"nodejs"},{name:0}).pretty() =not show name  
+//  db.thapadata.find({name:"nodejs"},{name:1}).pretty() =only show name but id is by default
+//  db.thapadata.find({name:"nodejs"},{_id:0,name:1}).pretty() ==only show name
+//  db.thapadata.find({active:"true"}).pretty().limit(1) =you have documents and all contain active true field and it give first match active true document
+//  db.thapadata.findOne({active:"true"}) = same as upper but we cant use pretty but answer same as upper
+//  db.thapadata.find({name:"reactjs"}).pretty().limit(1).skip(1) = skip first match give second match
+
+//6 update  db.thapadata.updateOne(filter,update)
+//db.thapadata.updateOne({name:"nodejs"}, {$set: {type:"front end"}})= update only one which has name =nodejs and change  the  type=front end
+// db.thapadata.updateMany({name:"reactjs"},{$set:{active:"false"}})= update  all which has name =reactjs and change  the  active=false 
+
+//7 delete  db.thapadata.deleteMany(delete criteria)
+// db.thapadata.deleteMany({video:50}) =delete documents whose video=50
+// db.thapadata.deleteMany({}) =delete all document
+
+//8 download mongod compass
+
+//9 CURD in mongo compass

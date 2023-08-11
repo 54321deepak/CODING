@@ -1,0 +1,73 @@
+h1 {
+  font-size: 30px;
+}
+
+h1 {
+  color: red;
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.heading p {
+  color: red;
+  background-color: blue;
+  font-size: 200px;
+  margin: 10px;
+}
+.heading p:hover {
+  color: red;
+  background-color: pink;
+  font-size: 20px;
+}
+.heading p::after {
+  content: " totol";
+}
+
+.total-final {
+  margin-left: 20px;
+  color: red;
+}
+
+.mine {
+  font-size: 10px;
+}
+
+.footer .footer_one {
+  color: blue;
+  background-color: gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer .footer_two {
+  font-size: 100px;
+}
+
+.section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: aqua;
+  display: flex;
+  flex-direction: column;
+}
+
+.oneone, .threethree, .twotwo {
+  background-color: pink;
+  border: 2px solid red;
+  padding: 20px;
+  margin: 20px;
+}
+
+.twotwo {
+  background-color: aqua;
+}
+
+.threethree {
+  background-color: blue;
+}/*# sourceMappingURL=main.css.map */

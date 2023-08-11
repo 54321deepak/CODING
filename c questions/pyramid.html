@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pyramid</title>
+</head>
+
+<body>
+    <script>
+        // let row = 5;
+        // for (let i = 1; i <= row; i++) {//5
+        //     for (let j = 1; j <= (row - i); j++) {//4
+        //         document.write("&nbsp;");
+        //     } //create 4 space _ _ _ _ 1
+        //     for (let k = 1; k <= i; k++) {
+        //         document.write("1  ");     // see clearly space are there           
+        //     }
+        //     document.write("<br />");  // next line
+
+        // }
+
+let n = 5;
+let string = "";
+for (let i = 1; i <= n; i++) {
+  // printing spaces
+  for (let j = 0; j < n - i; j++) {
+    string += " ";
+  }
+  // printing star
+  for (let k = 0; k < i; k++) {
+    string += "*";
+  }
+  string += "\n";
+}
+console.log(string);
+
+
+// for (let k=0;k<5;k++)  {
+//     for (let p=0;p<=k;p++)  {
+//         document.write("1")        
+// }
+// document.write("</br>")
+// }
+
+    </script>
+</body>
+
+</html>

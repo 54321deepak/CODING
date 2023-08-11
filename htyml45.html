@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>media query with css grid    video only</title>
+    <style>
+
+        .container{
+            display: grid;
+            grid-gap: 1rem;
+
+        }
+
+        @media only screen and (max-width:300px){
+            body{
+                background-color: red;
+            }
+        }
+
+         @media only screen and (min-width:300px) and (max-width:500px){
+            body{
+                background-color: blue;
+            }
+        }
+
+        @media only screen and (min-width:500px) and (max-width:700px){
+            body{
+                background-color: orange;
+            }
+        }
+
+
+        @media only screen and (min-width:700px) {
+            body{
+                background-color: purple;
+            }
+        }
+
+.boredr-now{
+    border: 2px solid black;
+    padding: 23px;
+    background-color: white;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="boredr-now">
+            home aboutus contactus
+        </nav>
+        <section class="boredr-now">
+            <h2>learn css in hindi</h2>
+        </section>
+        <aside class="boredr-now">
+            <h1>learn css in english</h1>
+        </aside>
+    </div>
+</body>
+</html>

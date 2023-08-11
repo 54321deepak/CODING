@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ispa </title>
+</head>
+
+<body>
+
+    <script>
+        // array
+        let num= 12345;
+        let a=num.toString();
+        let n = a.length;
+let p = "";
+        let i;
+
+        for (i = n - 1; i >= 0; i--) {
+p = p + a[i];
+
+        }
+        
+        console.log(p);
+
+        if (a.match(p)) {     //work in string   
+            console.log("true")
+        } else {
+            console.log("false")
+        }
+
+        
+        if (a===p) {
+            console.log("true")
+        } else {
+            console.log("false")
+        }
+
+        
+    </script>
+</body>
+
+</html>

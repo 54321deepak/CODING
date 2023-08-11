@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>armstrong number</title>
+    <link rel="stylesheet" href="">
+    <script></script>
+</head>
+
+<body>
+    <script>
+        let num = prompt("enter your number");
+        let size = prompt("size of number");               // in javascript numerical strin work  like a numerical and we perform opertion on it
+
+        let temp = num;
+        let sum = 0;
+        while (temp > 0) {
+            let k = temp % 10;
+            
+            sum = sum + k ** size;
+            temp = parseInt(temp / 10); 
+            console.log(k);
+            //return only values not decimal
+        }
+        if (sum == num) {
+            console.log("it is");
+
+        } else {
+            console.log("it is not");
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>

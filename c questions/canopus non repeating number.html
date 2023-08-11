@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documen</title>
+    <script>
+        let a = [1, 23, 45, 67, 83, 2, 45, 22, 22, 12, 12]
+        let p = a.length;
+        for (let i = 0; i < p; i++) {
+            let x = a[i];
+            let some = 0;
+            for (let j = 0; j < p; j++) {
+                if (a[j] == x) {
+                    some++;
+                }
+            }
+            if (some == 1) {
+                console.log(x)
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

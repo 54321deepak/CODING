@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex box</title>
+    <style>
+.container{
+width: 100%;
+    height:500px ;
+border: 2px solid red;
+display: flex;
+/*flex-direction: row;  /*  by default*/
+flex-direction: column;
+/* flex-direction: row-reverse; */
+/* flex-direction: column-reverse; */                     
+/* flex-wrap: wrap;                   /*wrap manage hona according to screen size*/   /*by defaulut =no wrap*/     /*inspect kar ke screen ko chota bada kar */
+/* flex-wrap: wrap-reverse; */                      /*inspect kar ke screen ko chota bada kar*/
+/* flex-flow: flex-direction   flex-wrap */
+
+/* arrange in horizontal direction */
+/* justify-content: center; */
+/* justify-content: space-between;                     */
+/* justify-content: space-evenly; */
+/* justify-content: space-around; */
+
+/*arrange in vertical direction*/
+align-items: center;                                    /*use with  justify-content: space-around you understand
+/* align-items: flex-start; */                            /*use with  justify-content: space-around you understand*/ 
+ /* align-items: flex-end; */                              /*use with  justify-content: space-around you understand*/
+ /* align-items: stretch;                                   /*net se dekh lena visnal ne bola use nahi hota*/
+
+}
+
+.item{
+    width: 100px;
+    height: 100px;
+    background-color: yellow;
+    border: 2px solid red;
+    margin: 5px;
+}
+
+#item-1{
+/* /* order: 2;       highest order going last */
+/* flex-grow: 3;    /*  wrap ke time size */
+/* flex-shrink: 3;       wrap ke time size */
+/* flex-basis: 320px; */     /**size of ok/
+/* when flex-direction: is set to row flex-basis control width */
+/* when flex-direction: is set to column flex-basis control height */
+
+
+}
+
+#item-2{
+    /* flex-shrink: 4; */
+}
+#item-3{
+    /* order: 40; */
+    /* align-self: flex-end; */
+    /* align-self: flex-start; */     /*by default*/
+/* align-self: center; */
+
+}
+
+
+    </style>
+</head>
+<body>
+    <h1> this is flex box</h1>
+    <div class="container">
+        <div class="item" id="item-1">first box</div>
+        <div class="item" id="item-2">second box</div>
+        <div class="item" id="item-3">third box</div>
+        <!-- <div class="item" id="item-4">fourth box</div>
+        <div class="item" id="item-5">fifth box</div>
+        <div class="item" id="item-6"> six box</div> -->
+        
+    </div>
+</body>
+</html>

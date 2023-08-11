@@ -1,0 +1,66 @@
+<!-- 33- before after pseudo selector,opacity ,background-->
+<!-- 34 box shadow ,text shadow -->
+<!-- 35 css variable -->
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            /* body{
+                margin: 0px;
+                padding: 0px;
+            }
+            div::before{
+                background: url('./image/dddd.jfif') no-repeat center center/cover;
+                content: "";
+                position: absolute;
+                width: 100vw;
+                height: 100vh;
+                opacity: 0.6;   /*between 0 and 1*/
+            /*} */
+/* 35  */
+:root{
+    --ppp:orange;             /*global variable*/
+}
+
+
+section{
+    display: flex;
+       }
+            p{
+                margin: 10px;
+            width: 100px;
+            height: 100px;
+            border: 2px solid red;
+            }
+            
+            #one{
+                --color:blue;                                        /*local variable =work only inside we declared*/
+                background-color: var(--color);
+            }
+
+            #two{
+                --color-a:pink;                                          /*local variable*/
+                background-color: var(--color-a);
+            }
+
+            #three{
+                background-color: var(--color);                             /*local variable hai so not working*/
+                color: var(--ppp);                                            /*global variable work any where*/
+            }
+            </style>
+    </head>
+    <body>
+        <div></div> 
+
+        <section>
+            <p id="one">aaaaaaaaa</p>
+            <p id="two">aaaaaaaaaa</p>
+            <p id="three">aaaaaaa</p>
+        </section>
+    </body>
+    </html>
+     <!-- background: url('https://source.unsplash.com/random/900×700/?fruit') no-repeat center center/cover;  -->

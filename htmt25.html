@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>position: static (default) , absolute , relative,fixed, sticky</title>
+    <style>
+        .container {
+            border: 2px solid red;
+            background-color: yellow;
+            height: 5000px;
+        }
+
+        .box {
+            border: 2px solid red;
+            width: 200px;
+            height: 200px;
+            margin: 4px;
+            display: inline-block;
+        }
+
+        #box3 {
+            /* relative normal poisition se movement karega  */
+            /* position: relative; */
+            top: 311px;
+            left: 220px;
+            /* absolute parent ki position se movement karega   */
+            /* position: absolute; */
+
+            /*  static is normal*/
+            /* position: static; */
+
+            /* you scoral the page but box are fix at absolute position */
+/* position: fixed; */
+
+  /* you scoral the page but box are fix at relative position  & ek dusre pe collapse nahi hoge */
+/* position: sticky; */
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="box" id="box1">a</div>
+        <div class="box" id="box2">b</div>
+        <div class="box" id="box3">c</div>
+        <div class="box" id="box4">d</div>
+    </div>
+
+</body>
+
+</html>
