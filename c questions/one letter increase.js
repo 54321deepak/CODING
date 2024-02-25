@@ -1,4 +1,4 @@
-// // mindpath company question
+// // mindpath company questions
 // function nextletter(str){
 //     let obj={
 //         "a":"b",
@@ -54,11 +54,10 @@
 // let str="hdllo* 3"
 // console.log(nextletter(str))
 
-// // aeiou wala bhi hogaya
+// // aeiou wala bhi hogaya = mindpath company question
 
 function letterChanges(str) {
     let arr = str.split("")
-
     for (var i = 0; i < str.length; i++) {
 
         if (arr[i].match(/[a-z]/)) {
@@ -66,9 +65,9 @@ function letterChanges(str) {
                 arr[i] = "A";
                 continue
             }
-            
+
             arr[i] = String.fromCharCode(arr[i].charCodeAt(0) + 1);
-            if ( arr[i] == "e" || arr[i] == "i" || arr[i] == "o" || arr[i] == "u") {
+            if (arr[i] == "e" || arr[i] == "i" || arr[i] == "o" || arr[i] == "u") {
                 arr[i] = arr[i].toUpperCase();
             }
         }
@@ -76,3 +75,5 @@ function letterChanges(str) {
     return arr.join("");
 }
 console.log(letterChanges("abcdefghijklmnopqrstuvwxyz"));
+console.log(letterChanges("hdllo * 3"));
+

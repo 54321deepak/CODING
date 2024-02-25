@@ -1,0 +1,218 @@
+NOT AND OR =yahoo baba
+
+AND=return when all condition are true.
+SELECT column1, column2, ...
+FROM table_name
+WHERE condition1 AND condition2 AND condition3 ...;
+
+OR=return when any condition are true.
+SELECT column1, column2, ...
+FROM table_name
+WHERE condition1 OR condition2 OR condition3 ...;
+
+NOT= 
+SELECT column1, column2, ...
+FROM table_name
+WHERE NOT condition;
+
+
+SELECT *
+FROM student5
+WHERE fname='vinod' OR fname='thapa';
+
+SELECT *
+FROM student5
+WHERE fname='vinod' AND fname='thapa';
+
+SELECT *
+FROM student5
+WHERE fname='vinod' OR fname='thapa' AND age=24; //ye wala fname="vinod" ko first condition maan raha hai ,fame="thape" AND age ko second condition
+
+ans=+----+-------+-----------+------+
+| id | fname | lname     | age  |
++----+-------+-----------+------+
+|  1 | vinod | thapa     |   25 |
+|  2 | vinod | bahadur   |   25 |
+|  4 | thapa | technical |   24 |
++----+-------+-----------+------+
+
+SELECT *
+FROM student5
+WHERE ( fname='vinod' OR fname='thapa' )AND age=24; //ye wala fname="vinod" OR fame="thapa" ko first condition maan raha hai ,age  ko second condition
+ans=+----+-------+-----------+------+
+| id | fname | lname     | age  |
++----+-------+-----------+------+
+|  4 | thapa | technical |   24 |
++----+-------+-----------+------+
+
+//it return record of id=1
+SELECT *
+FROM student5
+WHERE  id = 1;
+
+//it return all record of not id=1
+SELECT id
+FROM student5
+WHERE NOT id = 1;
+
+//return all record of not age=24 OR  recordS of age=25  
+SELECT *
+FROM student5
+WHERE NOT age=24 OR Age=25;
+
++----+--------+---------+------+
+| id | fname  | lname   | age  |
++----+--------+---------+------+
+|  1 | vinod  | thapa   |   25 |
+|  2 | vinod  | bahadur |   25 |
+|  5 | arjun  | kc      |   26 |
+|  6 | binita | thapa   |   21 |
+|  7 | ramesh | thapa   |   21 |
+|  8 | amrit  | thapa   |   23 |
+|  9 | ram    | chetti  |   30 |
+| 10 | kanxi  | thapa   |   25 |
++----+--------+---------+------+
+
+//bestpeers
+SELECT *
+FROM student5
+WHERE NOT (fname='vinod' OR  fname='thapa' OR fname='arjun');
+
+SELECT *
+FROM student5
+WHERE NOT (fname='vinod' AND lname='thapa');
+
+yahoo baba
+//BETWEEN OPERTOR=The BETWEEN operator selects values within a given range. The values can be numbers, text, or dates.
+The BETWEEN operator is inclusive: begin and end values are included. 
+
+SELECT *
+FROM student5
+WHERE age>=24 AND age <= 30; //ye bhi sahi hai
+
+syntax=SELECT column_name(s)
+FROM table_name
+WHERE column_name BETWEEN value1 AND value2;
+
+SELECT *
+FROM student5
+WHERE age BETWEEN 24 AND 30;
+
+//not with between
+SELECT *
+FROM student5
+WHERE age NOT BETWEEN 24 AND 30;
+
+//used with string
+
+SELECT *
+FROM student5
+WHERE fname BETWEEN 'a' AND 'k'; // string me start se end-1 menasnot include k tak ke return karega
+
++----+--------+-------+------+
+| id | fname  | lname | age  |
++----+--------+-------+------+
+|  5 | arjun  | kc    |   26 |
+|  6 | binita | thapa |   21 |
+|  8 | amrit  | thapa |   23 |
++----+--------+-------+------+
+
+
+SELECT *
+FROM student5
+WHERE fname BETWEEN 'a' AND 'l';
+
++----+--------+-------+------+
+| id | fname  | lname | age  |
++----+--------+-------+------+
+|  5 | arjun  | kc    |   26 |
+|  6 | binita | thapa |   21 |
+|  8 | amrit  | thapa |   23 |
+| 10 | kanxi  | thapa |   25 |
++----+--------+-------+------+
+
+
+
+//niche wale dono me small difference hai dhiyan se dhek
+
+SELECT * 
+FROM student5
+WHERE fname BETWEEN 'arjun' AND 'kanxi';
+
++----+--------+-------+------+
+| id | fname  | lname | age  |
++----+--------+-------+------+
+|  5 | arjun  | kc    |   26 |
+|  6 | binita | thapa |   21 |
+| 10 | kanxi  | thapa |   25 |
++----+--------+-------+------+
+
+SELECT *
+FROM student5
+WHERE fname BETWEEN 'amrit' AND 'kanxi';
++----+--------+-------+------+
+| id | fname  | lname | age  |
++----+--------+-------+------+
+|  5 | arjun  | kc    |   26 |
+|  6 | binita | thapa |   21 |
+|  8 | amrit  | thapa |   23 |
+| 10 | kanxi  | thapa |   25 |
++----+--------+-------+------+
+
+
+//we can also use this with date
+
+//bestpeers
+SELECT * FROM employees
+WHERE salary BETWEEN 1000 AND 3000;
+
+SELECT *
+FROM student5
+WHERE myDateTime BETWEEN '2008-01-01'  AND '2008-03-31'
+
+//LIKE =The LIKE operator is used in a WHERE clause to search for a specified pattern in a column.
+
+There are two wildcards often used in conjunction with the LIKE operator:
+
+ The percent sign (%) represents zero, one, or multiple characters
+ The underscore sign (_) represents one, single character
+
+ SELECT column1, column2, ...
+FROM table_name
+WHERE columnN LIKE pattern;
+
+SELECT *
+FROM student5
+WHERE fname LIKE 'v%';
+
+//RETURN ALL VALUES NOT START WITH v.
+SELECT *
+FROM student5
+WHERE fname NOT LIKE 'v%';
+
+'a%'=Finds any values that start with "a"
+'%a'=Finds any values that end with "a"
+'%or%'=Finds any values that have "or" in any position
+'_r%'=Finds any values that have "r" in the second position
+'a_%'=Finds any values that start with "a" and are at least 2 characters in length
+'a__%'=	Finds any values that start with "a" and are at least 3 characters in length
+'a%o'=Finds any values that start with "a" and ends with "o"
+'__'= exact two character
+
+SELECT *
+FROM student5
+WHERE fname LIKE '___';
+
+//bestpeers
+SELECT fname
+FROM student5
+WHERE fname LIKE 'v%' OR fname LIKE 'r%' ORDER BY fname;
+
+//with BINARY =binary is used for case sensitivity 
+SELECT *
+FROM student5
+WHERE BINARY fname LIKE 'v%'; // here fname start with big V can not be return only small v RETURN
+
+SELECT *
+FROM student5
+WHERE phonenumber LIKE '%21';

@@ -1,5 +1,16 @@
 /*
-///////////1 react is javascript library & used component to reuse  . . React is used to build single-page applications. 
+///////////1 react is javascript library & used component to reuse. React is used to build single-page applications. 
+
+React is a free and open-source front-end JavaScript library for building user interfaces based on components.
+React is a JavaScript library for building user interfaces.
+
+React is used to build single-page applications.
+
+React allows us to create reusable UI components.
+
+ single-page applications means whole application in single-page me Hai and only important pae is update not full application usin virtual dom.  
+
+
 //////////2 npm = node package manaer   
 //////////3 install vs code   + 3 more items in vs code   
 
@@ -11,14 +22,31 @@
 3=3=go  d drive , folder create     ,then   create-react-app app ka name, then npm start 
  */
 
+import { Component } from "react";
+
 ///////////////5 remove waste file and make first program  , import or require
 ///////////////6jsx  html contant in reactdom.rendom are jsx which is compiled by bable
 // bablel is compiler in raect   
+
+
+// What is JSX? JSX stands for JavaScript XML. JSX allows us to write HTML in React (javascipt file).normally we write HTML in HTML file not in javascript.
+
 ////////////////7 use multi jsx elements = use div or use[,]
 /////////////////////8 react.fragment = div use karte hai to project me div  ban jata hai hum vo nahichahte so use <react.fragment> </react.fragment> or <></>
+
+// allows you to return multiple elements from a React component by allowing you to group a list of children without adding extra nodes to the DOM
+
+// In React, whenever you want to render something on the screen, you need to use a render method inside the component. This render method can return single elements or multiple elements. The render method will only render a single root node inside it at a time. However, if you want to return multiple elements, the render method will require a 'div' tag and put the entire content or elements inside it. This extra node to the DOM sometimes results in the wrong formatting of your HTML output and also not loved by the many developers.
+
 /////////////////////9 easy program
-/////////////////////10 we write javascript in jsx data use{},jsx expression use variable and 2+3 only in jsx ={} , loop not work 
+/////////////////////10 we write javascript in jsx data use{},jsx expression use variable and 2+3 only in jsx ={} , loop not work
+
+// {} = curly brackets
 /////////////////////////11 template literal in react =  <h1>{`ok ${a}  ${b}`}</h1>
+
+// backtick(`) characters, 
+// double quotes "" or single quotes ''.
+
 /////////////////////// 12 date and time   =   let date = new Date().toLocaleDateString(); , let time = new Date().toLocaleTimeString();
 //////////////////////////13 attribute = src,href,class are same for  jsx and javascript and html   ruf= <a> <p> etc are tag 
 // attribute  data in variable then {variable} instead of "" directly , par normal "" bhi kam karega
@@ -41,7 +69,7 @@
 //import defaultname ,{name1,name2,anme3} from ""./filename" 
 // <P/> =component,{u()}=function are difference
 //////////////////////////////////21 project =  variable.tofixed(value like 2 etc)  it is used to get only limited value after the decimal point  
-/////////////////////////////////22 props in reactjs are user made attribute , which contain funstion as a object .props are immuable . props are parent ti cild send data
+/////////////////////////////////22 props in reactjs are user made attribute , which contain funstion as a object .props are immuable . props are parent to cild send data
 // ruff attribute and className are used like this classNmae="hh"
 // use object like=> object.name
 // put value in object like=> object.name ="value" 
@@ -62,7 +90,8 @@
 // extra there  aretwo types of components function and class componenets
 // vishal=class  component is not used know a days but very imp = react life cycle also used in class kar lena
 //context api karna hai
-//state is also used to store data but manage only in component
+// props = props are send parent to cild
+//state is also used to store data but manage only in component . When the state object changes, the component re-renders.
 //function component don't have state or reactlife cycle with the helpof hook we used state and react life cycle in react
 //props and state are used to store data ,but props data cannnot be change andstate data can be change
 //class props =code step by step hindi youtube 
@@ -73,11 +102,16 @@
 //react life cycle =5 method more bhi hai ye very imp hai
 // inke control flow imp hai
 //youtube= code step by step
+
+// sequance
 // constructor()  
-//rendor()
-//componentDidMount()
+//rendor()  -  load html
+//componentDidMount() - use api call
 //componentDidUpdate()
-//componentDidUnmount()
+//componentwillUnmount() - 
+//  will means pehle
+
+// Componentwillmount - use layout effect
 
 ///////////////////////////////////////30 event in react ,react hook in function components,with the the help of react hooks we can use state and react life cycle function in function components
 // const [count,setcount] = useState(0)
@@ -268,30 +302,42 @@ export default Todolists;
 ////////////////////////////////////////////43 material ui is a react library ,project using material ui easy
 ///44 npm is container of codes so that other programers use that code  ,install then import then use , all package we are install handle in package.json 
 //45 todo list same as old with the help of material icon
-//46 control  + ` to start terminal and close   terminal , npm start on terminal
+//46 control  + ` to start terminal and close   terminal, npm start on terminal
 //47 video old ho gaya hai, naye tarike aagaye hai , // video66 naya hai // code with harry ke tarike se bhai kar sakte hai
-//48=1= download extension in vs code= IntelliSense for CSS class names in HTML  =it suggest us css class names , mast hai
+//48=1= download extension in vs code= IntelliSense for CSS class names in TML  =it suggest us css class names , mast hai
 //48=2=make prtoject interview question answer
 // const value ={ question:"what is" , answer:"deepak"}
 /* <MyAccordian {...value}/> send object as props , received as const const MyAccordian = ({question ,answer})=>   */
 //49 make a project using bootstrap
-//extra= dynamic key in object , youtube =steve griggith  let a={ [name]: value }
+//extra= dynamic key in object , youtube =steve griggith  let a={ [name]: value } = square bracket me value dalte Hai uski value ke data ki key ban jati Hai =  it is used to generate dynamic key.
+
+
+
 //50 project
 //51 context api= it is used to directly send data main parent to any child compont
 //52 useContext hook = it is used to easy the context api
 // hooks never work with class component
-//53 useEffect hook =it is used to achieve life cycle method in function component 
-//54 project of hook easy we document.title ,not document.head.title 
+//53 useEffect hook =it is used to achieve life cycle method in function component
+//54 project of hook easy we document.title ,not document.head.title
 //55 axios  it is used in the place of axios , vishal ne ola  use hota hai
 //56 react router = it is used to open page without load when you user write like http://about/contact
 // and according to user to open that page
+
+// React Router is a standard library for routing in React. It enables the navigation among views of various components in a React Application, allows changing the browser URL, and keeps the UI in sync with the URL
+
+// BrowserRouter: BrowserRouter is a router implementation that uses the HTML5 history API(pushState, replaceState, and the popstate event) to keep your UI in sync with the URL.
+// Routes: Routes component is used to render only the first route that matches the location rather than rendering all matching routes.it is used to switcin betwwen routes.
+// Route: This component checks the current URL and displays the component associated with that exact path. All routes are placed within the switch components.
+
+
 //57 use react router make  nav bar = <a> tag ki jagah <navlink> use
 //58 to 65 nai kiya , imp hai kar lena
 //66 bootstrap
+// 67 react hooks
 // one more playlist  search= usereducer thapa
 
 //redux
-// redux is used to remove the problem of sending data parent to child  compoment without sending to any intermediate component 
+// redux is used to remove the problem of sending data parent to child  compoment without sending to any intermediate component
 // it has 3 things 1=action 2=reducer 3=store
 // step 1 = npm install redux react-redux
 //install react development tools

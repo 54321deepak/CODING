@@ -12,16 +12,16 @@ for(let j=0;j<arr.length;j++){
 console.log(sum-sum1)
 */
 
-let arr=[1,2,3,4,6,8]
-for(let i=1;i<8;i++){
-    value=false;
-    for(let j=0;j<arr.length;j++){
-    if(i == arr[j]){
-        value=true;
-        break;
-    }   
-}
-if (value == false){
-    console.log(i)
-}
+let arr = [1, 2, 3, 4, 6, 8]
+for (let i = 1; i < 8; i++) {
+    value = false;
+    for (let j = 0; j < arr.length; j++) {
+        if (i == arr[j]) {
+            value = true;
+            break;
+        }
+    }
+    if (value == false) {
+        console.log(i)
+    }
 }

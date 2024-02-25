@@ -1,35 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <script>
-        
-        let a= prompt("enter a number")
+
+        let a = prompt("enter a number")
         let k = parseInt(a)
-        if(k==0){
+        if (k == 0) {
             console.log("not prime")
         }
-        if(k==1){
+        if (k == 1) {
             console.log("not prime")
+        }
+        if (k == 2) {
+            console.log("prime")
         }
         let res = "";
-         for (let i = 2; i < k; i++) {
-            if(k%i == 0){
+        for (let i = 2; i < k; i++) {
+            if (k % i == 0) {
                 res = "not a   prime";
                 break;
-            }else{
-                res ="prime  number"
+            } else {
+                res = "prime  number"
             }
-         }
-         console.log(res)
+        }
+        console.log(res)
     </script>
 </body>
+
 </html>
 
-// 2 is prime number 
+// 2 is prime number
 // prime are those who is divisible by only 2 number 1 and them self

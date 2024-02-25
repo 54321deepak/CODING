@@ -1,13 +1,23 @@
 passward =sqlsql
+sql me row ko record bolte hai
 database ke andar tables rahati hai.
+
 datatypes:-
 1=int =interger= 1,-1,0
 2=float= -0.8 ,0.0 ,9.0
 3=boolean=true,false
-4=char=fixed length string  contain numbers,letters,special character
-5=varchar= variable length string  contain numbers,letters,special character
+4=char=fixed length string means char(10) me bas 'deepak' 6values dali to extra 4 automatic fill ho jaegi empty , contain numbers,letters,special character eg = 'a'  'deepak' '5555' '-55555' 'deepak vishal soniya'
+5=varchar= variable length string means varchar(10) me bas 'deepak' 6 values dali to extra 4 automatic fill nahi hogi ,4 palce include hi nahi hogi  contain numbers,letters,special character eg = 'a'  'deepak' '5555' '-55555' 'deepak vishal soniya'
 6=date= yyyy-mm-dd
 7=datetime= date time combination , format is yyyy-mm-dd
+
+varchar me (size) ye dalna jaruji warna error 
+int8 and int(8) or char8 or char(8)are same but use normally like int(4)
+float me size size set nahi karte
+agar  ye (size) nahi do to by default wala leleta hai = int ka 11,char 1,
+char me nahi dege to by default 1 lega or ye sahi nahi hai
+
+char me size 50 tak or varchar me unlimited,float me 24 us ke baad double use kar te hai,int me 10 values 
 
 primary /foreign keys
 primary keys =unique column in table to easy identify data.
@@ -16,45 +26,57 @@ one table has one primary key column , unique and not null
 foriegn keys=foriegn key column link two or more tables
 table can have any number of foriegn keys,can contain dublicate value & null value 
 
-constranints =condition
+/////constranints =condition
 constraints are condition that has to be fill fulled
 syntax:-
-CREATE TABLE table-name(
+create table-name(
     column_name1 datatype constraints,
     column_name2 datatype constraints,
 )
 constraints
-1=NOT NULL = column can not have null value
+1=NOT NULL = column can not have empty place.
 2=UNIQUE=all values in column are different
-3-primary key=combination of NOT NULL & UNIQUE
+3-primary key=combination of NOT NULL & UNIQUE.
 4=foreign key =prevent action that  destroy links between 2 tables
 5=CHECK=you add condition ,column satisfy specific condition on values ex=values position ex values greater than 5
 6=DEFAULT=if no value in column ,this default value is added
 7=CREATE INDEX= used to create or retrieve data from database very fast    
 
+//yaha se sab right hoga
+
 syntax
-CREATE DATABASE testdb
+
+create database testdb;
+
+show databases;
 
 CREATE TABLE customer
 (
-"ID" int8 PRIMARY KEY,
-"Name" varchar(50) NOT NULL,
-"Age" int NOT NULL,
-"City" char(50),
-"Salary" numeric
+id int PRIMARY KEY,
+name varchar(50) NOT NULL,
+age int NOT NULL,
+city char(50),
+salary numeric
 );  
+
+jab table ko create karte hai to column name me 2 word hoto  right way emp_id  , emp-id  ye galat hai 
+
+//char(50) means char max 50
+
 
 SELECT * FROM customer
 
-"City" char,   //char size is not define default it take one.
+City char,   //char size is not define default it take one.
+
 
 INSERT INTO customer
- ("ID" , "Name" , "Age" , "City" , "Salary")
+ (id , name , age , city , salary)
 VALUES
 (1, 'sam' , 26 , 'Delhi' , 9000),
 (2,'ram',24,'Banglore', 19000),
 (3,'pam',27,'delhi', 16000),
 (4,'jam',29,'pun', 8700)
+;
 //es me last me comma error
 
 ////////////////////////////////////////////////////////////////////limit
@@ -185,31 +207,241 @@ select ROUND(AVG("Salary")) from customer
 group by  statement  group rows that have the same values into summary rows
 it id used with aggregate functions
 
-syntax=SELECT column_name
-         FROM table-name
-         GROUP BY column_name
+syntax=SELECT column_name(s)
+         FROM table_name
+         GROUP BY column_name(s); 
 
-select "Age",sum("Salary") As "Total"
-from customer
-GROUP BY "Age"
+SELECT SUM(salary)
+FROM customer;
+         
+SELECT  age,SUM(salary)  AS total
+FROM customer;
 
-select "Age",sum("Salary") As "Total"
-from customer
-GROUP BY "Age"
-ORDER BY "Total" asc
+SELECT  city,SUM(salary)  AS total
+FROM customer;
+
+SELECT  city,SUM(salary)  AS total
+FROM customer
+GROUP BY age;
+
+SELECT  city,SUM(salary)  AS total
+FROM customer
+GROUP BY city;
+
+SELECT city,SUM(salary) AS total
+FROM customer
+GROUP BY city
+ORDER BY total ASC;
 
 
-select "Age",sum("Salary") As "Total" 
-from customer
-ORDER BY "Total" asc           //ye galat hai 
-GROUP BY "Age"
+SELECT city,SUM(salary) AS total
+FROM customer
+ORDER BY total asc;     // ye galat hai
+GROUP BY city;
 
 //Having 
-HAVING clause id used to apply condition on group by
+HAVING clause is used to apply condition on group by
 WHERE clause is used apply condition on select
 HAVING always come after group by
- syntax=SELECT column_name
+ syntax=SELECT column_name(s)
          FROM table-name
-         WHERE condition
-         GROUP BY column_name
-         Having condition
+         WHERE condition(s)
+         GROUP BY column_name(s)
+         Having condition(s)
+
+ex=
+SELECT city,COUNT(salary) AS total
+FROM customer
+GROUP BY city
+HAVING COUNT(salary) >=4
+ORDER BY total DESC;
+
+SELECT city,COUNT(salary) AS total
+FROM customer
+GROUP BY city
+HAVING COUNT(salary) = 1  OR COUNT(salary) > 4
+ORDER BY total DESC;
+
+//time
+
+//joins
+joins means combine tables.
+joins clause is used to combine 2 or more tables based upon related column between them.
+
+1.INNER JOIN
+2 LEFT OUTER JOIN or LEFT JOIN
+3 RIGHT OUTER JOIN or RIGHT JOIN
+4 FULL OUTER JOIN or FULL JOIN or OUTER JOIN
+
+CREATE TABLE payment
+(
+id int PRIMARY KEY,
+address varchar(50) NOT NULL,
+number int NOT NULL
+);  
+
+INSERT INTO payment
+ (id , address , number )
+VALUES
+(1, '15 guru' , 1111),
+(2,'16 guru',2222),
+(10,'17 guru',3333),
+(11,'18 guru',4444)
+;
+
+note:- ON tables ka sequence metter nahi karta
+note:- FROM wali table left me aaegi or join wali right me
+note:- jab SELECT ke bad column ke name likhege dono table ke ushi sequence me output aaega.
+
+1. INNER JOIN = return records that have matching values in both table.
+
+syntax= SELECT column(s)
+        FROM  tableA
+        INNER JOIN tableB
+        ON tableA.column_name = tableB.column_name;
+        
+        syntax= SELECT column(s)
+        FROM  tableA
+        INNER JOIN tableB
+        ON tableB.column_name = tableA.column_name;
+ 
+        
+        ex= SELECT *
+        FROM  customer
+        INNER JOIN payment
+        ON customer.id = payment.id;
+        
+        ex= SELECT *
+        FROM  customer AS c
+        INNER JOIN payment AS p
+        ON c.id = p.id;
+
+        SELECT name , number
+        FROM  customer AS c
+        INNER JOIN payment AS p
+        ON c.id = p.id;
+
+        
+        SELECT c.name, p.number
+        FROM  customer AS c
+        INNER JOIN payment AS p
+        ON c.id = p.id;
+
+        SELECT  p.number,c.name
+        FROM  customer AS c
+        INNER JOIN payment AS p
+        ON c.id = p.id;
+
+        inner ki jagah join use kiya
+
+        SELECT  *
+        FROM  customer 
+        JOIN payment ON customer.id = payment.id;
+
+2. LEFT JOIN= return all record from left table and only record from the right table that matchesthe left table 
+
+NOTE=   lEFT join me ON me tableA.column_name = tableB.column_name;  or tableB.column_name = tableA.column_name;    same nahi hi hai .  left side wali table pe operation hoga. 
+
+syntax:- SELECT column(s)
+FROM  tableA
+LEFT JOIN tableB
+ON tableA.column_name = tableB.column_name;
+
+// ye dana same hai
+        ex= SELECT *
+        FROM  customer AS c
+        LEFT JOIN payment AS p
+        ON c.id = p.id;
+   
+        ex= SELECT *
+        FROM  customer AS c
+        LEFT JOIN payment AS p
+        ON p.id = c.id;
+
+
+3. RIGHT JOIN= return all record from right table and only  record from the left table that matches the right table. 
+
+syntax:- SELECT column(s)
+FROM  tableA
+RIGHT JOIN tableB
+ON tableA.column_name = tableB.column_name;
+
+        ex= SELECT *
+        FROM  customer AS c
+        RIGHT JOIN payment AS p
+        ON c.id = p.id;
+
+        EX=SELECT *
+        FROM  customer AS c
+        RIGHT JOIN payment AS p
+        ON p.id = c.id;
+
+4.FULL OUTER JOIN= return all record from right table and the left table
+// it is noy working any more .use union
+
+        syntax:- SELECT column(s)
+        FROM  tableA
+        FULL OUTER JOIN tableB
+        ON tableA.column_name = tableB.column_name;
+        
+        EX=SELECT *
+        FROM  payment AS c
+        FULL OUTER JOIN customer AS p
+        ON p.id = c.id;
+
+use union
+
+2 tables
+
+        SELECT *
+        FROM customer
+        LEFT JOIN payment 
+        ON customer.id = payment.id
+        UNION
+        SELECT *
+        FROM customer
+        RIGHT JOIN payment 
+        ON customer.id = payment.id;
+
+
+3 TABLES
+KNOWLEDGE base YOUTUBE CHANNEL;
+
+5. return all part of A - common of   A and B
+
+SELECT *
+FROM customer  A
+LEFT JOIN payment B 
+ON A.id = B.id
+WHERE B.id IS NULL;
+
+6.return all part of B - common of A and B
+
+SELECT *
+FROM customer  A
+RIGHT JOIN payment B 
+ON A.id = B.id
+WHERE A.id IS NULL;
+
+7.FULL A+B - common of A and B 
+
+YE KAMNAHI KAR RAHA
+
+SELECT *
+FROM customer
+LEFT JOIN payment 
+ON customer.id = payment.id
+UNION
+SELECT *
+FROM customer
+RIGHT JOIN payment 
+ON customer.id = payment.id
+WHERE customer.id IS NULL
+OR payment.id IS NULL;
+
+EX=SELECT *
+FROM  payment AS c
+FULL OUTER JOIN customer AS p
+ON p.id = c.id;
+WHERE c.id IS NULL
+OR p.id IS NULL;

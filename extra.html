@@ -1,21 +1,39 @@
 library vs framework
 lirary = collection of functions,object. it is used for specific task. class.
-framework = collection of library is called framework. it is used for variety of task. collection of  class.
- 
-Hooks 
+framework = collection of library is called framework. it is used for variety of task. collection of class.
+
+Hooks
 
 React Router v6+ now uses the useNavigate Hook instead of the useHistory Hook.
 
-usenavigate uselocation useparams 
+usenavigate uselocation useparams
 
-usenavigate = It helps to go to the specific URL, forward or backward pages. 
+usenavigate = It helps to go to the specific URL, forward or backward pages.
 
 
-uselocation = full patH, We can also extract the query parameters from the URL through the useLocation object and make some decisions, based on the query parameter.
-For example, in the above URL, http://localhost:3000/products/school/?bags, location.search will be equal to ?name=bags. Therefore, we can display the products belonging to the “bags” category depending on the result obtained through the useLocation hook.
+uselocation = full patH, We can also extract the query parameters from the URL through the useLocation object and make
+some decisions, based on the query parameter.
+For example, in the above URL, http://localhost:3000/products/school/?bags, location.search will be equal to ?name=bags.
+Therefore, we can display the products belonging to the “bags” category depending on the result obtained through the
+useLocation hook.
 `/login?redirect=${redirect}`
 
-useparams =  sometimes we want to access the parameters of the current route returns an object of key/value pairs
+location.hash
+The hash of the current URL.
+
+location.key
+The unique key of this location.
+
+location.pathname
+The path of the current URL.
+
+location.search
+The query string of the current URL.
+
+location.state
+The state value of the lo
+
+useparams = sometimes we want to access the parameters of the current route returns an object of key/value pairs
 
 <Link to={user.id}>{user.name}</Link>
 
@@ -31,4 +49,11 @@ monoose is monodb db framework wHicH is used to connect node js witH mondodb
 && == if any false come false is assign
 
 || = first is true so tHen assin first
-|| = first is false so tHen go to second  and so on ,all false last assin
+|| = first is false so tHen go to second and so on ,all false last assin
+
+useref = The useRef hook is a built-in function in React that returns a mutable ref object, which persists between
+renders of a component. It allows you to reference and access DOM elements directly, as well as store mutable values
+that persist between renders. Unlike the useState hook, useRef does not cause a re-render when the value it holds
+changes.
+
+document.Get.elememetbyid se kareGe to koise bHi component se id used Ho jaeGi but not in ref case.

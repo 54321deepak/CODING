@@ -1,29 +1,376 @@
-<!-- pop push in array = assign remove value in last of array 
-    
-include=> work on both array and string
+<!-- string -->
+
+==> String length = it is not a predefined metod
+
+let a="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+let b = a.length
+console.log(b);
+
+
+==> toUpperCase = return new string and not change original.
+let a="abcd";
+let b = a.toUpperCase();
+console.log(b);
+
+
+==> toLowerCase = return new string and not change original.
+
+let a="ABCD";
+let b = a.toLowerCase();
+console.log(b);
+
+==> trim = remove space from start and end. return new string and not change original.
+let a=" ABCD ";
+let b = a.trim();
+console.log(b );
+
+==> replace = method replaces only the first match. return new string and not change original.
+
+let a = "pqr";
+let b = a.replace("p", "z");
+console.log(b,a);
+
+==> split = string can be converted to an array , return new string and not change original.
+
+let a = "abcdef";
+const b = a.split("");
+console.log(b,a);
+
+output= [ 'a', 'b', 'c', 'd', 'e', 'f' ] abcdef
+
+let a = "abcdef xyz";
+const b = a.split(" ");
+console.log(b,a);
+
+output = [ 'abcdef', 'xyz' ] abcdef xyz
+
+==> slice = extracts a part of a string , return new string and not change original
+
+let a = "AppleBananaKiwi";
+let b = a.slice(0,5);
+console.log(b,a);
+
+output = Apple AppleBananaKiwi
+
+let a = "AppleBananaKiwi";
+let b = a.slice(3);
+console.log(b,a);
+
+output = leBananaKiwi AppleBananaKiwi
+
+==> fromCharCode = return a letter of number , charCodeAt = return a number of alpabet
+
+let k = "abcdef"
+let a = String.fromCharCode(65)
+let b = k.charCodeAt(0) +1
+console.log(a,b);
+
+==> includes = The includes() method returns true if a string contains a specified string else false
+
+let k = "abcdef"
+if(k.includes("a")){
+console.log("a");
+}
+
+==> match = method matches a string against a regular expression
+
+let a= "ab";
+let b = a.match(/[a-z]/);
+if(b){
+console.log("a");
+}
+
+i = means small and big are same
+
+let a= "A";
+let b = a.match(/[a-z]/i);
+if(b){
+console.log("a");
+}
+
+==> toString = returns a number as a string. return new string and not change original.
+
+let a = 15;
+let b = a.toString();
+console.log(b);
+
+==>total =12
+
+
+<!-- array -->
+
+==> sort = it sort original array
+
+let b=[13,2]
+b.sort((a,b)=>{
+return a-b
+})
+console.log(b)
+console.log(b);
+
+output = [ 2, 13 ]
+
+let b=["b","a"]
+b.sort()
+console.log(b);
+
+output = [ 'a', 'b' ]
+
+
+===> include= work on both array and string
 let a=[1,2,3,4,5,"a"]
 let b="jshgh"
 console.log("Welcome to Programiz!",a.includes(3),a.includes("a"),b.includes("s"));
 
+output = Welcome to Programiz! true true true
 
+
+==> flat = not change original array.
+
+let arr = [ 1,1,[1,1,11]]
+let as = arr.flat()
+
+console.log(arr,as);
+
+output =[ 1, 1, [ 1, 1, 11 ] ] [ 1, 1, 1, 1, 11 ]
+
+==> push pop = assign remove value in last of array
+
+
+let arr = [ 1,1]
+let a = arr.push(2)
+let b= arr.pop()
+console.log(arr,a,b);
+
+output= [ 1, 1 ] 3 2
+
+==> length = it also work with array
+
+==> join = convert array into string , return new string and not change original array.
+
+const elements = ['Fire', 'Air', 'Water'];
+console.log(elements.join(''),elements);
+
+output= FireAirWater [ 'Fire', 'Air', 'Water' ]
+
+==> shift = method removes the array element in real array
+
+const a = ["Banana", "Orange", "Apple", "Mango"];
+let b = a.shift();
+console.log(a,b);
+
+output = [ 'Orange', 'Apple', 'Mango' ] Banana
+
+==> unshift = method adds a new element to an array (at the beginning), and "unshifts" older elements:
+
+const a = ["Banana", "Orange", "Apple", "Mango"];
+let b = a.unshift("Lemon");
+console.log(a,b);
+
+output =[ 'Lemon', 'Banana', 'Orange', 'Apple', 'Mango' ] 5
+
+==> splice = () method can be used to add new items or remove elements to original array:
+
+
+const a = ["Banana", "Orange", "Apple", "Mango"];
+let b= a.splice(2, 0, "Lemon", "Kiwi");
+console.log(a,b);
+
+output= [ 'Banana', 'Orange', 'Lemon', 'Kiwi', 'Apple', 'Mango' ] []
+
+
+const a = ["Banana", "Orange", "Apple", "Mango"];
+let b= a.splice(2, 1, "Lemon", "Kiwi");
+console.log(a,b);
+
+output = [ 'Banana', 'Orange', 'Lemon', 'Kiwi', 'Mango' ] [ 'Apple' ]
+
+const a = ["Banana", "Orange", "Apple", "Mango"];
+let b= a.splice(2);
+console.log(a,b);
+
+output = [ 'Banana', 'Orange' ] [ 'Apple', 'Mango' ]
+
+==> slice = The slice() method slices out a piece of an array into a new array , return new array , not change in
+original array
+
+const a = ["a", "b", "c", "d", "e"];
+const b = a.slice(1,4);
+console.log(a,b);
+
+output = [ 'a', 'b', 'c', 'd', 'e' ] [ 'b', 'c', 'd' ]
+
+const a = ["a", "b", "c", "d", "e"];
+const b = a.slice(1);
+console.log(a,b);
+
+output = [ 'a', 'b', 'c', 'd', 'e' ] [ 'b', 'c', 'd', 'e' ]
+
+==> total=11
+
+<!-- extra -->
+
+==> if else else if
+
+let a=2
+
+if(a===1){
+console.log("a");
+}
+
+if(a===1){
+console.log("a");
+}else{
+console.log("b");
+}
+
+if(a===1){
+console.log("a");
+}else if(a===2){
+console.log("b");
+}
+
+==> continue and break
+
+==> parseInt = convert float into inteer , return new string and not change original
+
+let k = 10.01
+let p = "10.33"
+let a = parseInt(k)
+let b = parseInt(p)
+console.log(a,b,k,p);
+
+output =10 10 10.01 10.33
+
+==> Math
 
 use= Math.min(...arr)
 use= Math.max(...arr)
 
-// sort metod used wit number array
-let b=[13,2]
-let a=b.sort((a,b)=>{
-    return a-b
+let b=1.34
+Math.round(b) 1.49=1 or 1.51=2
+
+==> typeof
+let a=[1,2,3,4,5,"a"]
+let b="jshgh"
+console.log(typeof(a));
+
+array is a object type
+
+==> for in loop = it return index
+
+const a = ["a", "b", "c", "d", "e"];
+const b= {0 : "p", 10 : "q" , 20 : "r"}
+for( let i in b){
+console.log(i);
+}
+
+for( let i in a){
+console.log(i);
+}
+
+==> for of loop = it return values ,not work on object.
+
+const a = ["a", "b", "c", "d", "e"];
+
+
+for( let i of a){
+console.log(i);
+}
+
+//only sort , splice , shift , unshifts ,pop, push are change original and return different values.
+
+==> totol = 6
+
+<!-- specail array metod -->
+
+==> forEach = forEach() method calls a callbackfunction for each element in an array.
+It does not change original array.
+The return value of this method is always undefined.
+
+let arr=[1,2,3,4,5]
+let newarr =arr.forEach((val,i)=>{
+arr[i] = arr[i] +1
+console.log(arr);
 })
 
-// sort metod used wit abpabet array
-let b=["b","a"]
-let a=b.sort()
+console.log("Welcome to Programiz!",newarr);
 
-//slice dont use double
+output => [ 2, 2, 3, 4, 5 ]
+[ 2, 3, 3, 4, 5 ]
+[ 2, 3, 4, 4, 5 ]
+[ 2, 3, 4, 5, 5 ]
+[ 2, 3, 4, 5, 6 ]
+Welcome to Programiz! undefined
 
-// mat.round()      1.49=1  or 1.51=2
+let arr=[1,2,3,4,5]
+let newarr =arr.map((val,i)=>{
+return val == 3
+});
 
-//smallest difference is 1 in array ,arr=[1,2,5,6,8,9]  2-1=1
+console.log("Welcome to Programiz!",newarr ,arr);
 
-trim not change original string
+output = Welcome to Programiz! [ false, false, true, false, false ] [ 1, 2, 3, 4, 5 ]
+
+==> map = map() method calls a callbackfunction for each element in an array.
+The return value of this method is
+always array of same size of original array.
+It does not change original array. without return it return array of undefined.
+
+
+let arr=[1,2,3,4,5]
+let newarr =arr.map((val,i)=>{
+arr[i] = arr[i] +1
+console.log(arr);
+return arr[i]
+})
+
+console.log("Welcome to Programiz!",newarr);
+
+
+output=
+[ 2, 2, 3, 4, 5 ]
+[ 2, 3, 3, 4, 5 ]
+[ 2, 3, 4, 4, 5 ]
+[ 2, 3, 4, 5, 5 ]
+[ 2, 3, 4, 5, 6 ]
+Welcome to Programiz! [ 2, 3, 4, 5, 6 ]
+
+==> filter = The filter() method creates a new array filled with elements that pass a test provided by a function.
+The filter() method does not change the original array.
+
+<!-- let arr=[1,2,3,4,5]
+let newarr =arr.filter((val,i)=>{
+return val < 5 }) -->
+
+console.log("Welcome to Programiz!",newarr ,arr);
+output=Welcome to Programiz! [ 1, 2, 3, 4 ] [ 1, 2,3, 4, 5 ]
+
+==> reduce = The reduce() method executes a function for array element.
+The reduce() method returns a single value: the function's result
+The reduce() method does not change the original array.
+
+let arr=[1,2,3,4,5]
+let newarr =arr.reduce((a,b)=>{
+return a+b
+});
+
+console.log("Welcome to Programiz!",newarr ,arr);
+
+output= Welcome to Programiz! 15 [ 1, 2, 3, 4, 5 ]
+
+==> find =The find() method returns the value of the first element that passes a test.
+The find() method executes a function for each array element.
+The find() method returns undefined if no elements are found.
+The find() method does not change the original array.
+
+let arr=[1,2,3,4,5]
+let newarr =arr.find((val,i)=>{
+return val == 3
+});
+
+console.log("Welcome to Programiz!",newarr ,arr);
+
+output = Welcome to Programiz! 3 [ 1, 2, 3, 4, 5 ]
+
+==> total = 5

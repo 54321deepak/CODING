@@ -20,7 +20,7 @@ function fun(str,num){
                         }
       
                         arr[i] = String.fromCharCode(arr[i].charCodeAt(0) + 1);
-                        arr[i]=arr[i].toUpperCase()
+                        
                 }
             }
         }

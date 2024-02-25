@@ -1,0 +1,278 @@
+//
+SELECT * FROM customer
+WHERE  age>25;
+
+//
+SHOW DATABASES;
+
+// create databases
+ syntax=CREATE DATABASE <databasename>;
+ ex=CREATE DATABASE thapa;
+
+// delete database
+  syntax=DROP DATABASE databasename; 
+  ex=DROP DATABASE thapa;
+
+//use database
+syntax=USE database_name;
+ex=USE thapa;
+
+//dataypes
+we can divide datatypes in three category
+1=number 
+2=string
+3=date and time
+
+1=number
+1.int = 11 digit tak store kar sakta hai , - infinite 0 + infinite
+2.double =
+3.float = .
+
+2=string = use inside ''
+1.char
+2.varchar = 1 to 256 character can store
+
+3=date and time
+
+//create table
+syntax=CREATE TABLE table_name (
+    column1 datatype,
+    column2 datatype,
+    column3 datatype
+);
+
+ex=CREATE TABLE student
+(
+name varchar(55),
+age int
+);  
+
+55 is max length of that field
+
+//syntax= SHOW TABLES;
+
+//syntax=DESC table_name;
+ex=DESC student;
+
+//delete table
+syntax=DROP TABLE table_name;
+ex=DROP TABLE student;
+
+//insert in table
+syntax=INSERT INTO table_name (column1, column2, column3, ...)
+VALUES (value1, value2, value3, ...);
+
+CREATE TABLE student
+(
+id int,
+name varchar(55),
+class int
+);
+
+ex=INSERT INTO student 
+(id, name, class)
+VALUES (1, 'vinod', 5),
+(2, 'pinod', 5);
+
+//select
+syntax=SELECT column1, column2, ...
+FROM table_name;
+
+// * = select all
+ex = SELECT * FROM student;
+
+//syntax=SHOW WARNINGS;
+
+//CONSTRAINTS
+// NULL and NOT NULL constraints
+
+//NULL
+NULL means we don't know value
+it is by default
+//jab column ki field me value nahi dalege to NULL kiha aataha
+
+INSERT INTO student 
+(id, name)
+VALUES (3, 'vinod');
+
+//NOT NULL 
+NOT NULL use to compasery to fill values in that field.
+
+CREATE TABLE student1
+(
+id int NOT NULL,
+name varchar(55) NOT NULL
+);
+
+//iske bad desc chala kar dekhana NULL field me YES ki jagah NO ho gaya hai
+
+INSERT INTO student1 
+(name)
+VALUES ( 'vinod');
+
+//ab select all kar  id wali fied automatic value 0 aajaegi ,interger wali field me value 0 aajaegi
+
+INSERT INTO student1 
+(id)
+VALUES ( 4);
+
+//ab select all kar  name wali fied kahli  rahegi ,NULL nahi aaega
+
+//DEFAULT constraints
+// default value set karsakte hai column ki taki NULL , 0 or khali jagah na aajae
+
+syntax=CREATE TABLE table_name (
+    column1 datatype NOT NULL DEFAULT value,
+    column2 datatype NOT NULL DEFAULT value
+);
+
+ex=CREATE TABLE student2
+(
+id int NOT NULL DEFAULT 00,
+name varchar(55) NOT NULL DEFAULT 'raja'
+);
+
+//iske bad desc student2 kar usme DEFAULT field me NULL ki jagah 00 and raja hajaega
+
+INSERT INTO student2 () VALUES ();
+
+//ab select * from student2 kar
+
+///add column in table
+
+syntax=ALTER TABLE table_name
+ADD column_name datatype;
+
+ex=ALTER TABLE student2
+ADD class int;
+
+///delete column in table
+
+syntax=ALTER TABLE table_name
+DROP COLUMN column_name ;
+
+ex=ALTER TABLE student2
+DROP COLUMN class ;
+
+//PRIMARY KEY constraints
+primary key  uniquely identify each record in a table 
+primary keys must contain unique values and not contain null values.
+
+CREATE TABLE student3
+(
+stud_id int NOT NULL,
+name varchar(55),
+age int,
+PRIMARY KEY (stud_id)
+);
+
+desc students3 me key field me stud_id filed primary hogai or NULL field NO hogai
+
+INSERT INTO student3 (stud_id,name,age)
+VALUES (1, 'vinod',25);
+
+INSERT INTO student3 (stud_id,name,age)
+VALUES (2, 'vinod',25);
+
+/// pehle 1 insert kiya phir 2 so no continue.. to hum use karte hai AUTO_INCREMENT
+
+CREATE TABLE student4 (
+    stud_id INT NOT NULL AUTO_INCREMENT,
+    name VARCHAR(255),
+    Age INT,
+    PRIMARY KEY (stud_id)
+);
+
+INSERT INTO student4 (name,age)
+VALUES ('vinod',25);
+
+INSERT INTO student4 (name,age)
+VALUES ('vinodthapa',25);
+
+desc student4; kar extra wale column me auto_increment aagaya hai 
+
+stud_id me kud hi new values aarahi hai.
+
+//CRUD
+
+CREATE TABLE student5 (
+    id INT NOT NULL AUTO_INCREMENT,
+    fname VARCHAR(55),
+    lname VARCHAR(55),
+    age INT,
+    PRIMARY KEY (id)
+);
+
+INSERT INTO student5 (fname,lname,age)
+VALUES ('vinod','thapa',25),('vinod','bahadur',25),('naran','kc',28),('thapa','technical',24),('arjun','kc',26),('binita','thapa',21),('ramesh','thapa',22),('amrit','thapa',23),('ram','chetti',30),('kanxi','thapa',25);
+
+R=read 
+
+select * from student5;
+
+WHERE clause=it is used to filter a record
+
+SELECT * FROM student5
+WHERE  age=25;
+
+SELECT fname,lname FROM student5
+WHERE  age=25;
+
+
+U=update=it is used to update record
+
+UPDATE student5 SET age=23  
+WHERE fname='ramesh';
+
+UPDATE student5 SET age=21 
+WHERE id=7;
+
+//delete is used to delte existing record in a table
+
+SELECT * FROM student5 WHERE  fname='naran';
+
+DELETE FROM student5 WHERE  fname='naran';
+
+SELECT * FROM student5 ;
+
+curd end
+
+// DISTINCT = it is return only unique value ,if any thing come more than one it show it only one time
+
+SELECT DISTINCT column1,column2,... FROM table_name ;
+
+//it work best when we select only one column
+
+SELECT DISTINCT fname FROM student5 ;
+
+SELECT DISTINCT fname,age FROM student5 ;
+
+//order by is used to sort te resukt in ascending or dscending order
+
+//ye dono same hai
+SELECT age FROM student5 ORDER BY age;
+SELECT age FROM student5 ORDER BY age ASC;
+
+SELECT age FROM student5 ORDER BY age DESC;
+
+SELECT DISTINCT age FROM student5 ORDER BY age;
+
+
+SELECT fname FROM student5 ORDER BY fname ASC;
+
+//LIMIT = give us limited answer
+
+SELECT age FROM student5 ORDER BY age LIMIT 3;
+
+//show errors;
+
+/LIKE opertor is used in a WHERE  clause to search for  a specified  pattern in  a column.
+
+SELECT fname FROM student5 WHERE fname LIKE '%in%';
+//return karo bech  me in ho
+SELECT fname FROM student5 WHERE fname LIKE 'v%';
+//return karo start me vi ho
+
+/agregate function
+
+COUNT=

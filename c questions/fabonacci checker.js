@@ -1,3 +1,5 @@
+//check number belong to fibonacci series or not
+
 function fun(num){
     let a=0,b=1
 if(a=== num || b ===num){

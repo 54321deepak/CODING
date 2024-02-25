@@ -37,6 +37,8 @@
     </div>
 
     <script>
+
+
         // 1
         // document.write("it is \\n   \'hah\'ok")
         //    console.log("it is \n ok");
@@ -487,8 +489,8 @@ a.forEach(function(value , indexadd){
         console.log(a)
         
         ////////////////////////////////////////3 datatypes let ,var ,const
-        // var is global scope  
-        // let const block scope
+        // var is global scope  or functional level scope = variable declaration going top of function 
+        // let const block scope = variable declaration going top of block
         
         //const
          const k= 3
@@ -794,8 +796,13 @@ console.log("yyyyyy ")
         confirm("are you wall")
         alert("danger")
         */
-        ////////////////////////////////////////////////////////////////////////////////28 dom=document object model ,bom= browser object model
+        ////////////////////////////////////////////////////////////////////////////////28 dom=document object model ,bom= browser object model= The Browser Object Model (BOM) allows JavaScript to "talk to" the browser.
+        
         // alert,prompt,confirm are part of bom , browser are provide extra featue like alert,prompt,confirm is bom
+
+        // DOM is basically the representation of the same HTML document but in a tree-like structure composed of objects
+        // With DOM, we can easily access and manipulate tags, IDs, classes, Attributes, or Elements of HTML using commands or methods provided by the Document object. Using DOM, the JavaScript gets access to HTML as well as CSS of the web page and can also add behavior to the HTML elements. 
+
         //dom represent page is an html(document)
         //document.body = page body as js object  
         //document.body.style.background="green"       //change page backgroound to green
@@ -932,6 +939,7 @@ console.log("yyyyyy ")
         */
 
         //////////////////////////////////////////////////////////////////////////////////47 browser events onclick , onmouseover, onmouseout  work with html elements
+        // Reacting to Events​​ A JavaScript can be executed when an event occurs, like when a user clicks on an HTML element
         // window.onload  
         /*
         let radha = () =>
@@ -958,6 +966,9 @@ console.log("yyyyyy ")
 
         ///////////////////////////////////////////////////////////////////48 event handling addEventListener removeEventListener
         /*
+        
+The addEventListener() method allows you to add event listeners on any HTML DOM object such as HTML elements, the HTML document, the window object, or other 
+The addEventListener() method attaches an event handler to an element without overwriting existing event handlers.
         let x=() => { 
             console.log("tftuu")
         }
@@ -1149,6 +1160,16 @@ console.log("yyyyyy ")
         //   })
       
         ///////////////////////////////////////////////////////////////////////59 asyn await
+
+//         "async and await make promises easier to write"
+
+// async makes a function return a Promise
+
+// await makes a function wait for a Promise
+
+// The await keyword can only be used inside an async function.
+
+// The await keyword makes the function pause the execution and wait for a resolved promise before it continues:
         /// async funxtion also retuen promise
 
         // async function test() {
@@ -1200,6 +1221,8 @@ console.log("yyyyyy ")
         */
 
         ///////////////////////////////////////////60 error hanling
+        // JavaScript provides error-handling mechanism to catch runtime errors using try-catch-finally block,
+        // he try statement lets you test a block of code to check for errors. · The catch statement lets you handle the error if any are present. ·
         /*
         try {
             console.log(a)
@@ -1270,7 +1293,9 @@ console.log("yyyyyy ")
 ///////////////////////////////////////////////////63,64,65    nothing
 //chapter 9 start
 ////////////////////////////////////////////////////////66 fetch api
-
+// The Fetch API is a promise-based interface for fetching resources by making HTTP requests to servers from web browsers
+// The fetch function returns a Promise object, which contains an HTTP response represented as a Response object. A common pattern is to extract the JSON response body by invoking the json function on the Response object.it is a two step process.
+// returns data in JSON 
 /*
 let p = fetch("https://api.publicapis.org/entries")       // it return apromise            //fetch nikalti hai data
 
@@ -1309,7 +1334,7 @@ fetch('https://jsonplaceholder.typicode.com/posts', {
   .then((json) => console.log(json));
   
   */
-  /////////////////////////////////////////////////////////68 cookies
+  /////////////////////////////////////////////////////////68 cookies //Tech Gun
 //cookies confusing vishal ne bola mat kar  par thodi imp hai 
 /*
 console.log(document.cookie)                 //kam nahi kar raha
@@ -1493,6 +1518,7 @@ ff()
 */
 
 ///////////////////////////////////////////89 hoisting    means use before declared(initiatization)
+// interpreter at run time
 /*
 console.log(a)
 var a=9
@@ -1531,7 +1557,8 @@ var p3 =function() {
 */
 
 ////////////////////////////////////////////////////////////90 closure = closure give you access to its outer function scope from inner function
-
+//lexical scope = scope of area of funcion
+// closure allow a function to access its parent lexical scope.
 // function name() {
 //     let a=3
 //      function name1() {
@@ -1543,13 +1570,14 @@ var p3 =function() {
 // name()
 
 /*
-///////////////////////////////////////////////////////////////91 arrow function and this
+///////////////////////////////////////////////////////////////91 arrow function and this =   In JavaScript, the this keyword refers to an object.
 //1  alone this refers to global object(window object)
 console.log(this)
 
-//2 in class refer to class
-//3 inside object inside function= this refer to object 
-/8
+
+//2 inside function =  this refer to window obj
+//3 inside object inside metod= this refer to object 
+
 let ar ={
     a:"deepak",
     b:"vishal",
@@ -1563,6 +1591,7 @@ let ar ={
 
 ar.show()
 
+//end
 //4 inside object inside function and another function = this refer to undefined
 
 let ar1 ={
@@ -1579,8 +1608,9 @@ let ar1 ={
 }
 
 ar1.show()
-
-//////////////////// solution of upper problem use arrow function
+//2 in class refer to class
+//////////////////// solution of upper problem use arrow function ///////// CodeWellTech
+// arrow function dont have this , in arrow function value of this define where this is define. 
 */
 /*
 let ar2 ={
@@ -1656,6 +1686,14 @@ a()*/
 // onclick=a  // pass a function
 //onclick=(()=>a()) // call a function
 //onclick=a() ,// call a function not good in react
+
+
+// javascipt and esma version  are same
+// wat is javascript 
+// JS allows developers to create a dynamic and interactive web page to interact with visitors and execute complex actions.
+// JavaScript is a scripting language that enables you to create dynamically updating content, control multimedia, animate images,
+// . JavaScript can update and change both HTML and CSS.
+// JavaScript often abbreviated as JS, is a programming language and core technology of the World Wide Web, alongside HTML and CSS.
 
 </script>
 </body>
